@@ -1,4 +1,6 @@
-h1 {
-  text-align: center;
-  color: red;
+img {
+  width: 50px;
+}
+.weather-app-boarder {
+  boarder: solid;
 }
