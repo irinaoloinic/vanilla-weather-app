@@ -1,6 +1,41 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 img {
   width: 50px;
 }
 .weather-app-boarder {
-  boarder: solid;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+h1 {
+  color: #272142;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  margin: 10px auto;
+}
+h2 {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 27px;
+  text-align: left;
+  font-weight: 700;
+  font-style: normal;
+  height: 27px;
+  margin: 20px 0 10px;
+  line-height: 28px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(39, 33, 66, 0.4);
 }
