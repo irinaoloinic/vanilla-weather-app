@@ -10,6 +10,7 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather app</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
@@ -19,13 +20,15 @@
       <div class="weather-app-wrapper">
         <div class="weather-app-boarder">
           <h1>Weather Forecast</h1>
-          <h2>Barcelona</h2>
+          <h2 id="city" Barcelona></h2>
 
           <div class="row">
             <div class="col-6">
               <ul>
-                <li>Saturday 10:15 Broken clouds</li>
-                <li>Humidity: 90% Wind: 5.14km/h1</li>
+                <li id="date"></li>
+                <li id="description"></li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind speed: <span id="wind"></span>km/h</li>
               </ul>
             </div>
 
@@ -35,7 +38,7 @@
                   src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                   alt="partly partly_cloudy"
                 />
-                <span class="temperature"> 20</span>
+                <span class="temperature" id="temperature"> </span>
                 <span class="units">˚C | <a href="#">˚F</a> </span>
               </div>
             </div>
