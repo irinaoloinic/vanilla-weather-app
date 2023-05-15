@@ -16,36 +16,41 @@
 
   <body>
     <div class="container">
-      <div class="weather-app-boarder">
-        <h1>Weather Forecast</h1>
-        <h2>Barcelona</h2>
+      <div class="weather-app-wrapper">
+        <div class="weather-app-boarder">
+          <h1>Weather Forecast</h1>
+          <h2>Barcelona</h2>
 
-        <div class="row">
-          <div class="col-6">
-            <ul>
-              <li>Saturday 10:15 Broken clouds</li>
-              <li>Humidity: 90% Wind: 5.14km/h1</li>
-            </ul>
-          </div>
+          <div class="row">
+            <div class="col-6">
+              <ul>
+                <li>Saturday 10:15 Broken clouds</li>
+                <li>Humidity: 90% Wind: 5.14km/h1</li>
+              </ul>
+            </div>
 
-          <div class="col-6">
-            <img
-              src="https://www.pngkit.com/png/detail/335-3351692_mow-in-the-right-weather-sunny-icon.png"
-              alt="sunny"
-            />
-            20℃
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="partly partly_cloudy"
+                />
+                <span class="temperature"> 20</span>
+                <span class="units">˚C | <a href="#">˚F</a> </span>
+              </div>
+            </div>
           </div>
         </div>
+        <small>
+          <a
+            href="https://github.com/irinaoloinic/vanilla-weather-app"
+            target="blank"
+          >
+            This is an open-source code
+          </a>
+          by Irina Oloinic
+        </small>
       </div>
-      <small>
-        <a
-          href="https://github.com/irinaoloinic/vanilla-weather-app"
-          target="blank"
-        >
-          This is an open-source code
-        </a>
-        by Irina Oloinic
-      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
