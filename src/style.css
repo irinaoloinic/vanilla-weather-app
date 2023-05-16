@@ -50,6 +50,7 @@ li {
   height: 27px;
   margin: 20px 0 10px;
   line-height: 28px;
+  padding-bottom: 25px;
 }
 .weather-temperature img {
   margin-right: 10px;

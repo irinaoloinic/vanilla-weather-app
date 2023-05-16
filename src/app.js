@@ -1,8 +1,3 @@
-let apiKey = "37f6a94ba46fa4c11df96b5390cdt21o";
-let city = "Ostend";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-console.log(apiUrl);
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -43,14 +38,19 @@ function showTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
 }
-
-axios.get(apiUrl).then(showTemperature);
-
-function search(event) {
+function search(city) {
+  let apiKey = "37f6a94ba46fa4c11df96b5390cdt21o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#searchItem");
-  console.log(cityInputElement.value);
+  let cityElement = document.querySelector("#searchItem");
+  search(cityElement.value);
+  console.log(cityElement.value);
 }
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
+
+search("Barcelona");
