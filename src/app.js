@@ -30,6 +30,8 @@ function showTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  celciusTemperature = response.data.temperature.current;
+
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElemt.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
@@ -50,7 +52,26 @@ function handleSubmit(event) {
   console.log(cityElement.value);
 }
 
+function converttoFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheiTemperature = (celciusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+}
+function convertDegreeCelcius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+search("Barcelona");
+
+let celciusTemperature = null;
+
+let degreeFahrenheit = document.querySelector("#fahrenheit-link");
+degreeFahrenheit.addEventListener("click", converttoFahrenheit);
+
+let degreeCelcius = document.querySelector("#celciuls-link");
+degreeCelcius.addEventListener("click", convertDegreeCelcius);
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-search("Barcelona");
