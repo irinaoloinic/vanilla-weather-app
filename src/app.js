@@ -1,5 +1,5 @@
 let apiKey = "37f6a94ba46fa4c11df96b5390cdt21o";
-let city = "Lisbon";
+let city = "Ostend";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 console.log(apiUrl);
 
@@ -45,3 +45,12 @@ function showTemperature(response) {
 }
 
 axios.get(apiUrl).then(showTemperature);
+
+function search(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#searchItem");
+  console.log(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);

@@ -2,7 +2,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 img {
-  width: 50px;
+  width: 80px;
 }
 h1 {
   color: #272142;
@@ -10,16 +10,6 @@ h1 {
   font-weight: 800;
   text-align: center;
   margin: 10px auto;
-}
-h2 {
-  color: #272142;
-  font-size: 27px;
-  text-align: left;
-  font-weight: 700;
-  font-style: normal;
-  height: 27px;
-  margin: 20px 0 10px;
-  line-height: 28px;
 }
 ul {
   margin: 0;
@@ -50,6 +40,16 @@ li {
   border-radius: 10px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   background: #fff;
+}
+.city {
+  color: #272142;
+  font-size: 27px;
+  text-align: left;
+  font-weight: 700;
+  font-style: normal;
+  height: 27px;
+  margin: 20px 0 10px;
+  line-height: 28px;
 }
 .weather-temperature img {
   margin-right: 10px;

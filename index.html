@@ -20,11 +20,26 @@
       <div class="weather-app-wrapper">
         <div class="weather-app-boarder">
           <h1>Weather Forecast</h1>
-          <h2 id="city" Barcelona></h2>
+          <form id="search-form" class="mb-5">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Search for city.."
+                  class="form-control"
+                  id="searchItem"
+                />
+              </div>
+              <div class="col-3">
+                <button type="button" class="btn btn-primary">SEARCH</button>
+              </div>
+            </div>
+          </form>
 
           <div class="row">
             <div class="col-6">
               <ul>
+                <li><span id="city" class="city"> </span></li>
                 <li>Last updated: <span id="date"> </span></li>
                 <li id="description"></li>
                 <li>Humidity: <span id="humidity"></span>%</li>
