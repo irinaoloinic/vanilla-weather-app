@@ -22,8 +22,16 @@ function formatDate(timestamp) {
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  let day = days[date.getDay()];
   return day[days];
 }
 function displayForecast(response) {
@@ -34,9 +42,10 @@ function displayForecast(response) {
     if (index < 4) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2"> 
+        `<div class="col-3"> 
                     <div class="weather-forecast-date" >
-                     ${formatDay(forecastDay.temperature.time)} </div>
+                     ${formatDay(forecastDay.time)} 
+                     </div>
                      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                        forecastDay.condition.icon
                      }.png" alt="" width="20px"/>
@@ -47,7 +56,6 @@ function displayForecast(response) {
                        forecastDay.temperature.minimum
                      )}˚</span>
                        </div>
-                      </div>
                     </div>`;
     }
   });
@@ -94,30 +102,7 @@ function handleSubmit(event) {
   console.log(cityElement.value);
 }
 
-function converttoFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheiTemperature = (celciusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
-  degreeCelcius.classList.remove("active");
-  degreeFahrenheit.classList.add("active");
-}
-
-function convertDegreeCelcius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-  degreeFahrenheit.classList.remove("active");
-  degreeCelcius.classList.add("active");
-}
-
 let celciusTemperature = null;
-
-let degreeFahrenheit = document.querySelector("#fahrenheit-link");
-degreeFahrenheit.addEventListener("click", converttoFahrenheit);
-
-let degreeCelcius = document.querySelector("#celciuls-link");
-degreeCelcius.addEventListener("click", convertDegreeCelcius);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
