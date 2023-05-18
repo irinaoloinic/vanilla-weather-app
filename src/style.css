@@ -76,11 +76,11 @@ li {
   line-height: 1;
   margin-left: 10px;
 }
-.weather-temperature.active {
-  text-decoration-color: black;
+.active {
+  color: black;
   cursor: default;
   text-decoration-line: none;
 }
-.weather-temperature.active:hover {
+.active:hover {
   text-decoration: none;
 }
