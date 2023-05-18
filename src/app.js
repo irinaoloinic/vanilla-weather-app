@@ -20,7 +20,26 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3"> 
+                    <div class="weather-forecast-date">
+                     ${day}
+                     <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" alt="" width="20px"/>
+                     <div class="weather-forecast-temperature" > <span class="weather-forecast-max-temperature" >20˚C </span>
+                      <span class="weather-forecast-min-temperature" > 23˚C</span>
+                       </div>
+                      </div>
+                    </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function showTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
@@ -40,6 +59,7 @@ function showTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
 }
+
 function search(city) {
   let apiKey = "37f6a94ba46fa4c11df96b5390cdt21o";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -68,7 +88,6 @@ function convertDegreeCelcius(event) {
   degreeFahrenheit.classList.remove("active");
   degreeCelcius.classList.add("active");
 }
-search("Barcelona");
 
 let celciusTemperature = null;
 
@@ -80,3 +99,6 @@ degreeCelcius.addEventListener("click", convertDegreeCelcius);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+search("Barcelona");
+displayForecast();
