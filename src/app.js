@@ -57,16 +57,16 @@ function converttoFahrenheit(event) {
   let fahrenheiTemperature = (celciusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
+  degreeCelcius.classList.remove("active");
+  degreeFahrenheit.classList.add("active");
 }
 
 function convertDegreeCelcius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celciusTemperature);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
+  degreeFahrenheit.classList.remove("active");
+  degreeCelcius.classList.add("active");
 }
 search("Barcelona");
 
