@@ -85,3 +85,19 @@ li {
   text-decoration: none;
   text-decoration-line: none;
 }
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+}
+.weather-forecast-date {
+  font-size: 20px;
+  color: black;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+.weather-forecast-temperature {
+  font-size: 15px;
+}
+.weather-forecast-min-temperature {
+  opacity: 0.5;
+}
