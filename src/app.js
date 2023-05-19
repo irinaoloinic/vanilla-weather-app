@@ -20,8 +20,9 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
 function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
+  let date = new Date(timestamp);
   let days = [
     "Monday",
     "Tuesday",
@@ -32,7 +33,7 @@ function formatDay(timestamp) {
     "Sunday",
   ];
   let day = days[date.getDay()];
-  return day[days];
+  return day;
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -44,7 +45,7 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-3"> 
                     <div class="weather-forecast-date" >
-                     ${formatDay(forecastDay.time)} 
+                     ${formatDay(forecastDay.time * 1000)} 
                      </div>
                      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                        forecastDay.condition.icon
